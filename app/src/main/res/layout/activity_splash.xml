@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.SplashActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff4b3a">
+
+        <ImageView
+            android:id="@+id/imgFrame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:src="@drawable/ellipse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:src="@drawable/logo"
+            app:layout_constraintStart_toStartOf="@id/imgFrame"
+            app:layout_constraintTop_toTopOf="@id/imgFrame" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:text="Food for"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_30ssp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/imgFrame" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:text="Everyone"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_30ssp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+        <ImageView
+            android:id="@+id/imgFace1"
+            android:layout_width="@dimen/_190sdp"
+            android:layout_height="@dimen/_290sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:src="@drawable/face1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+        <ImageView
+            android:id="@+id/imgFace2"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:src="@drawable/face2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+        <ImageView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_marginBottom="-15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rectangle_3"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFace1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:layout_width="@dimen/_190sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rectangle_5"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFace2"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvGetStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:background="@drawable/background_tv"
+            android:gravity="center"
+            android:padding="@dimen/_15sdp"
+            android:text="Get started"
+            android:textColor="#ff4b3a"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

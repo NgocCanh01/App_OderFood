@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.HomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvHi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Hi Ngoc Canh"
+                    android:textColor="@color/purple_200"
+                    android:textSize="@dimen/_15ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Eat and order"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvHi"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHi" />
+
+                <ImageView
+                    android:id="@+id/imgPerson"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/person"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edtSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/background_edit_search"
+                    android:drawableLeft="@drawable/ic_search"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:hint="Search"
+                    android:padding="@dimen/_5sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintAnhDong"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@id/edtSearch">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/anhDong"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/shopping"
+                        app:lottie_repeatMode="reverse" />
+
+                    <TextView
+                        android:id="@+id/tvFreeShip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:text="Free Ship"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/anhDong"
+                        app:layout_constraintTop_toTopOf="@+id/anhDong" />
+
+                    <TextView
+                        android:id="@+id/tvOderNow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_50sdp"
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:background="@drawable/background_order"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:text="Oder Now"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/anhDong"
+                        app:layout_constraintEnd_toEndOf="@+id/anhDong" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvCategories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Categories"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintAnhDong" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rc_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="@id/tvCategories"
+                    app:layout_constraintTop_toBottomOf="@id/tvCategories" />
+
+                <TextView
+                    android:id="@+id/tvPopular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Popular   "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rc_categories" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rc_popular"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="@id/tvPopular"
+                    app:layout_constraintTop_toBottomOf="@id/tvPopular" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottomAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:fabCradleMargin="@dimen/_5sdp"
+                app:fabCradleRoundedCornerRadius="@dimen/_40sdp"
+                app:fabCradleVerticalOffset="@dimen/_2sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_home" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Home" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_infor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Infor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_support" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Support" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_setting" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Setting" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/purple_200"
+                android:elevation="@dimen/_5sdp"
+                android:src="@drawable/ic_cart"
+                app:elevation="@dimen/_5sdp"
+                app:layout_anchor="@id/bottomAppBar" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

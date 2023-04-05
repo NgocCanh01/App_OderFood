@@ -11,7 +11,8 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomBar"
             android:fillViewport="true">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -131,7 +132,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rc_categories"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_120sdp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginRight="@dimen/_10sdp"
                     app:layout_constraintStart_toStartOf="@id/tvCategories"
@@ -153,7 +154,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rc_popular"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_120sdp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginRight="@dimen/_10sdp"
                     app:layout_constraintStart_toStartOf="@id/tvPopular"

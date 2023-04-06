@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.orderfood.databinding.ItemCategoryBinding;
+import com.example.orderfood.listener.CategoryListener;
 import com.example.orderfood.models.Category;
 
 import java.util.List;
@@ -17,10 +18,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
 
     //truyen vao list
     List<Category> list;
+    //STEP 7:
+    private CategoryListener listener;
 
-    public CategoryAdapter(List<Category> list) {
+    public CategoryAdapter(List<Category> list, CategoryListener listener) {
         this.list = list;
+        this.listener = listener;
     }
+//    public CategoryAdapter(List<Category> list) {
+//        this.list = list;
+//    }
 
     @NonNull
     @Override
@@ -49,7 +56,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
             this.binding = binding;
         }
         public void setBinding(Category category){
+
             binding.setTenHang(category);
+            //STEP 7
+            binding.executePendingBindings();
+            binding.getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onClickCategory(category);
+                }
+            });
         }
     }
 

@@ -59,4 +59,7 @@ dependencies {
     //glider
     implementation 'com.github.bumptech.glide:glide:4.15.0'//4.13.2
     annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'//4.13.2
+
+    //circle image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

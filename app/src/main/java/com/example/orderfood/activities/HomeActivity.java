@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -14,15 +15,18 @@ import com.example.orderfood.R;
 import com.example.orderfood.adapters.CategoryAdapter;
 import com.example.orderfood.adapters.PopularAdapter;
 import com.example.orderfood.databinding.ActivityHomeBinding;
+import com.example.orderfood.listener.CategoryListener;
 import com.example.orderfood.models.Category;
 import com.example.orderfood.models.Meals;
 import com.example.orderfood.viewModel.HomeViewModel;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements CategoryListener {
     HomeViewModel homeViewModel;
     ActivityHomeBinding binding;
     //STEP 1:Màn hình Splash
     //STEP 6: HIỆN DATA LÊN RECYCLEVIEW POPULAR: tạo item_popular,sửa activityHome(RecycleView)
+    //STEP 7: EVENT CLICK CATEGORY SCREEN:tạo CategoryActivity,package(listener), sửa CategoryAdapter,HomeActivity,tao background_meal, MealAdapter,CategoryViewModel
+    //search: imager cicler lib android
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         homeViewModel.categoryRepositoryMutableLiveData().observe(this, categoryModel -> {
             if (categoryModel.isSuccess()) {
 //                Log.d("logg", categoryModel.getResult().get(0).getCategory());
-                CategoryAdapter adapter = new CategoryAdapter(categoryModel.getResult());
+                CategoryAdapter adapter = new CategoryAdapter(categoryModel.getResult(),this);
                 binding.rcCategories.setAdapter(adapter);
             }
         });
@@ -67,5 +71,13 @@ public class HomeActivity extends AppCompatActivity {
                 binding.rcPopular.setAdapter(adapter);
             }
         });
+    }
+    //STEP 7
+    @Override
+    public void onClickCategory(Category category) {
+        Intent intent = new Intent(getApplicationContext(),CategoryActivity.class);
+        intent.putExtra("idcate",category.getId());
+        intent.putExtra("namecate",category.getCategory());
+        startActivity(intent);
     }
 }

@@ -97,7 +97,7 @@
             android:background="@drawable/background_tv"
             android:gravity="center"
             android:padding="@dimen/_15sdp"
-            android:text="Get started"
+            android:text="Order Now"
             android:textColor="#ff4b3a"
             android:textSize="@dimen/_18ssp"
             app:layout_constraintBottom_toBottomOf="parent" />

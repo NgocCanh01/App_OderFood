@@ -16,17 +16,21 @@ import com.example.orderfood.adapters.CategoryAdapter;
 import com.example.orderfood.adapters.PopularAdapter;
 import com.example.orderfood.databinding.ActivityHomeBinding;
 import com.example.orderfood.listener.CategoryListener;
+import com.example.orderfood.listener.EventClickListener;
 import com.example.orderfood.models.Category;
 import com.example.orderfood.models.Meals;
 import com.example.orderfood.viewModel.HomeViewModel;
 
-public class HomeActivity extends AppCompatActivity implements CategoryListener {
+public class HomeActivity extends AppCompatActivity implements CategoryListener, EventClickListener {
     HomeViewModel homeViewModel;
     ActivityHomeBinding binding;
     //STEP 1:Màn hình Splash
     //STEP 6: HIỆN DATA LÊN RECYCLEVIEW POPULAR: tạo item_popular,sửa activityHome(RecycleView)
     //STEP 7: EVENT CLICK CATEGORY SCREEN:tạo CategoryActivity,package(listener), sửa CategoryAdapter,HomeActivity,tao background_meal, MealAdapter,CategoryViewModel
     //search: imager cicler lib android
+    //STEP 8: GET DATA CHO MÀN SHOW DETAIL:tạo EventClickListener,MealDetail va Model; MealDetailRepository, ShowDetailViewModel
+    // sửa: MealAdapter,CategoryActivity,OderFoodApi
+    //STEP 9: GIAO DIỆN DETAIL_ACTIVITY:xml and ActivityShowDetail
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +71,7 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener 
 //            }
             //STEP 6:
             if(mealsModel.isSuccess()){
-                PopularAdapter adapter = new PopularAdapter(mealsModel.getResult());
+                PopularAdapter adapter = new PopularAdapter(mealsModel.getResult(),this);
                 binding.rcPopular.setAdapter(adapter);
             }
         });
@@ -78,6 +82,13 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener 
         Intent intent = new Intent(getApplicationContext(),CategoryActivity.class);
         intent.putExtra("idcate",category.getId());
         intent.putExtra("namecate",category.getCategory());
+        startActivity(intent);
+    }
+    //STEP 8:
+    @Override
+    public void onClickPopular(Meals meals) {
+        Intent intent = new Intent(getApplicationContext(),ShowDetailActivity.class);
+        intent.putExtra("id",meals.getIdMeal());
         startActivity(intent);
     }
 }

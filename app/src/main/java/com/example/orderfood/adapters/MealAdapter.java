@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.orderfood.databinding.ItemMealBinding;
+import com.example.orderfood.listener.EventClickListener;
 import com.example.orderfood.models.Meals;
 
 import java.util.List;

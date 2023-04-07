@@ -1,6 +1,7 @@
 package com.example.orderfood.retrofit;
 
 import com.example.orderfood.models.CategoryModel;
+import com.example.orderfood.models.MealDetailModel;
 import com.example.orderfood.models.MealsModel;
 
 import retrofit2.Call;
@@ -10,7 +11,8 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface OrderFoodApi {
-    @GET("category.php")//gọi tới file api có sẵn
+    @GET("category.php")
+//gọi tới file api có sẵn
     Call<CategoryModel> getCategory();
 
     //đẩy data lên
@@ -21,5 +23,13 @@ public interface OrderFoodApi {
     Call<MealsModel> getMeals(
             @Field("idcate") int idcate//có trường để đẩy lên
 
-            );
+    );
+    //STEP 8:
+    @POST("mealdetail.php")
+    @FormUrlEncoded
+    //có giá trị đẩy lên
+    Call<MealDetailModel> getMealDetail(
+            @Field("id") int id//có trường để đẩy lên
+
+    );
 }

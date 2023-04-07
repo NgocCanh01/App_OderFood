@@ -10,15 +10,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.orderfood.databinding.ItemCategoryBinding;
 import com.example.orderfood.databinding.ItemPopularBinding;
+import com.example.orderfood.listener.EventClickListener;
 import com.example.orderfood.models.Meals;
 
 import java.util.List;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.MyViewHolder> {
     List<Meals>list;
+    //STEP 8:
+    private EventClickListener listener;
 
-    public PopularAdapter(List<Meals> list) {
+    public PopularAdapter(List<Meals> list, EventClickListener listener) {
         this.list = list;
+        this.listener = listener;
     }
 
     @NonNull
@@ -49,6 +53,13 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.MyViewHo
         private void setBinding(Meals meals){
             binding.setPopular(meals);
             binding.executePendingBindings();
+            //STEP 8:
+            binding.getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onClickPopular(meals);
+                }
+            });
         }
     }
 }

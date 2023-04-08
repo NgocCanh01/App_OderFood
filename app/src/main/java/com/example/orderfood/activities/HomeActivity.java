@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 
 import com.example.orderfood.R;
 import com.example.orderfood.adapters.CategoryAdapter;
@@ -31,11 +31,7 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
     //STEP 8: GET DATA CHO MÀN SHOW DETAIL:tạo EventClickListener,MealDetail va Model; MealDetailRepository, ShowDetailViewModel
     // sửa: MealAdapter,CategoryActivity,OderFoodApi
     //STEP 9: GIAO DIỆN DETAIL_ACTIVITY:xml and ActivityShowDetail
-<<<<<<< HEAD
     //STEP 10: EVENT BUTTON ADD CART: tạo Cart in models: Ultils,add library paper, chỉnh sửa giao diện add
-    //STEP 11: CARTACTIVITY
-=======
->>>>>>> parent of 42f6596 (EVENT BUTTON ADD CART: tạo Cart in models: Ultils,add library paper, chỉnh sửa giao diện add)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,14 +53,6 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
         binding.rcPopular.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager1 = new GridLayoutManager(this,3);
         binding.rcPopular.setLayoutManager(layoutManager1);
-
-        binding.btnFloating.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent cart = new Intent(getApplicationContext(), CartTestActivity.class);
-                startActivity(cart);
-            }
-        });
     }
 
     private void initData() {

@@ -6,11 +6,9 @@
     <data>
 
     </data>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -44,17 +42,15 @@
                     android:textSize="@dimen/_15ssp" />
 
             </LinearLayout>
-
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgNameFood"
-                android:layout_width="@dimen/_270sdp"
-                android:layout_height="@dimen/_270sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:src="@drawable/person"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/line1" />
-
+                app:layout_constraintTop_toBottomOf="@+id/line1"
+                android:layout_width="@dimen/_270sdp"
+                android:layout_height="@dimen/_270sdp"/>
             <LinearLayout
                 android:id="@+id/line3"
                 android:layout_width="match_parent"
@@ -65,13 +61,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/imgNameFood">
 
                 <ImageView
-                    android:id="@+id/btnSub"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/sub" />
 
                 <TextView
-                    android:id="@+id/tvAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_12sdp"
@@ -82,36 +76,33 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/btnAdd"
+                    android:layout_marginTop="@dimen/_2sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_2sdp"
                     android:src="@drawable/add" />
 
             </LinearLayout>
-
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnAddCart"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/btnAdd"
+                android:text="Add to cast"
+                android:textColor="@color/white"
                 android:layout_marginStart="@dimen/_25sdp"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_25sdp"
                 android:layout_marginBottom="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/line3"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:background="@drawable/background_order"
-                android:text="Add to cart"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@+id/line3" />
-
-            <TextView
-                android:id="@+id/tvDescription"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
                 android:layout_margin="@dimen/_5sdp"
                 android:padding="@dimen/_5sdp"
                 android:text="Description"
                 android:textSize="@dimen/_14ssp"
-                app:layout_constraintTop_toBottomOf="@+id/btnAddCart" />
+                android:id="@+id/tvDescription"
+                app:layout_constraintTop_toBottomOf="@+id/btnAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

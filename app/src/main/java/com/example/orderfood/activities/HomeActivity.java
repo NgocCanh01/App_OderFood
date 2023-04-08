@@ -31,7 +31,6 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
     //STEP 8: GET DATA CHO MÀN SHOW DETAIL:tạo EventClickListener,MealDetail va Model; MealDetailRepository, ShowDetailViewModel
     // sửa: MealAdapter,CategoryActivity,OderFoodApi
     //STEP 9: GIAO DIỆN DETAIL_ACTIVITY:xml and ActivityShowDetail
-    //STEP 10: EVENT BUTTON ADD CART: tạo Cart in models: Ultils,add library paper, chỉnh sửa giao diện add
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.example.orderfood.R;
 import com.example.orderfood.adapters.CategoryAdapter;
@@ -53,6 +54,14 @@ public class HomeActivity extends AppCompatActivity implements CategoryListener,
         binding.rcPopular.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager1 = new GridLayoutManager(this,3);
         binding.rcPopular.setLayoutManager(layoutManager1);
+
+        binding.btnFloating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cart = new Intent(getApplicationContext(),CartActivity.class);
+                startActivity(cart);
+            }
+        });
     }
 
     private void initData() {
